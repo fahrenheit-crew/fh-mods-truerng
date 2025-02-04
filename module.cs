@@ -15,7 +15,7 @@ namespace Fahrenheit.Modules.TrueRNG;
 
 public sealed record TrueRNGModuleConfig : FhModuleConfig {
     [JsonConstructor]
-    public TrueRNGModuleConfig(string configName) : base(configName) { }
+    public TrueRNGModuleConfig(string name) : base(name) { }
 
     public override FhModule SpawnModule() {
         return new TrueRNGModule(this);
