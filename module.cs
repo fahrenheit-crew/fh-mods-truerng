@@ -1,7 +1,8 @@
-﻿using System.Runtime.InteropServices;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 using Fahrenheit.Core;
+
+using static Fahrenheit.Core.FhCall;
 
 namespace Fahrenheit.Modules.TrueRNG;
 
@@ -40,9 +41,6 @@ public sealed record TrueRNGModuleConfig : FhModuleConfig {
  * > public delegate uint brnd(int param_1);
  */
 
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public delegate uint brnd(int param_1);
-
 public class TrueRNGModule : FhModule {
     /* [fkelava 9/9/24 22:26]
      * Every function you intend to hook or invoke must have an associated _method handle_ declared.
@@ -60,7 +58,7 @@ public class TrueRNGModule : FhModule {
 
     public TrueRNGModule(TrueRNGModuleConfig moduleConfig) : base(moduleConfig) {
         _module_config = moduleConfig;
-        _brnd_handle   = new FhMethodHandle<brnd>(this, "FFX.exe", new brnd(h_brnd), offset: 0x398900);
+        _brnd_handle   = new FhMethodHandle<brnd>(this, "FFX.exe", h_brnd, 0x398900);
     }
 
     public uint h_brnd(int param_1) {
