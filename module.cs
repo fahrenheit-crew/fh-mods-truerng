@@ -1,27 +1,8 @@
-﻿using System.Text.Json.Serialization;
-
-using Fahrenheit.Core;
+﻿using Fahrenheit.Core;
 
 using static Fahrenheit.Core.FhCall;
 
 namespace Fahrenheit.Modules.TrueRNG;
-
-/* [fkelava 9/9/24 22:26]
- * Modules in Fahrenheit are instantiated through their configurations.
- *
- * Configuration objects are loaded in JSON form from disk. You are free to include any fields you desire as long as they are JSON-serializable.
- *
- * Every module _must_ have an associated configuration, even if you do not plan to include any custom fields.
- */
-
-public sealed record TrueRNGModuleConfig : FhModuleConfig {
-    [JsonConstructor]
-    public TrueRNGModuleConfig(string name) : base(name) { }
-
-    public override FhModule SpawnModule() {
-        return new TrueRNGModule(this);
-    }
-}
 
 /* [fkelava 9/9/24 22:26]
  * Every function you intend to hook or invoke must have an associated _delegate_ declared, i.e. a function pointer typedef.
@@ -41,6 +22,7 @@ public sealed record TrueRNGModuleConfig : FhModuleConfig {
  * > public delegate uint brnd(int param_1);
  */
 
+[FhLoaderMark]
 public class TrueRNGModule : FhModule {
     /* [fkelava 9/9/24 22:26]
      * Every function you intend to hook or invoke must have an associated _method handle_ declared.
@@ -53,12 +35,10 @@ public class TrueRNGModule : FhModule {
      *
      * where one of the last two parameters is required, whichever one; where HOOK_FUNCTION_NAME is the name of a function whose signature matches the delegate DELEGATE_TYPE_NAME.
      */
-    private readonly TrueRNGModuleConfig  _module_config;
     private readonly FhMethodHandle<brnd> _brnd_handle;
 
-    public TrueRNGModule(TrueRNGModuleConfig moduleConfig) : base(moduleConfig) {
-        _module_config = moduleConfig;
-        _brnd_handle   = new FhMethodHandle<brnd>(this, "FFX.exe", h_brnd, 0x398900);
+    public TrueRNGModule() {
+        _brnd_handle = new FhMethodHandle<brnd>(this, "FFX.exe", h_brnd, 0x398900);
     }
 
     public uint h_brnd(int param_1) {

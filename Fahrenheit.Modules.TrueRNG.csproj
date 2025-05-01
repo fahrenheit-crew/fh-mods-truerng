@@ -63,9 +63,6 @@
     This should be included exactly as-is.
     -->
     <ItemGroup>
-        <Content Include="fhtruerng.config.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
         <Content Include="fhtruerng.manifest.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
