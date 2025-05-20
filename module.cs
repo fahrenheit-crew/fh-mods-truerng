@@ -1,4 +1,6 @@
-﻿using Fahrenheit.Core;
+﻿using System.IO;
+
+using Fahrenheit.Core;
 
 using static Fahrenheit.Core.FhCall;
 
@@ -52,7 +54,7 @@ public class TrueRNGModule : FhModule {
         return _brnd_handle.orig_fptr.Invoke(0);
     }
 
-    public override bool init() {
+    public override bool init(FileStream global_state_file) {
         /* [fkelava 9/9/24 22:26]
          * Hook the target function of a method handle as follows:
          * > bool hook_successful = _handle.hook();
