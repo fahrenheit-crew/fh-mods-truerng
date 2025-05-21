@@ -1,7 +1,8 @@
 {
     "Name":"True RNG Tools for Fahrenheit",
     "Desc":"Prevents the game's RNG system from being tracked.",
-    "Authors":"The Fahrenheit contributors",
+    "Authors": "The Fahrenheit contributors",
+    "Version":"1.0.0-alpha",
     "Link":"https://github.com/peppy-enterprises/fh-mods-truerng",
     "DllList":["fhtruerng"],
     "Dependencies":[],
