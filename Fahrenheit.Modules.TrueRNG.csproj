@@ -48,7 +48,7 @@
     For modules, this must always be equal to $(SolutionDir)\artifacts\localdeploy\modules\$(AssemblyName).
     -->
     <PropertyGroup>
-        <CopyToDir>$(SolutionDir)artifacts\localdeploy\modules\$(AssemblyName)</CopyToDir>
+        <CopyToDir>$(SolutionDir)artifacts\localdeploy\mods\$(AssemblyName)</CopyToDir>
     </PropertyGroup>
 
     <!-- SDK REFERENCES -->
