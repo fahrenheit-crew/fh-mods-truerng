@@ -1,8 +1,7 @@
 ﻿using System.IO;
+using System.Runtime.InteropServices;
 
 using Fahrenheit.Core;
-
-using static Fahrenheit.Core.FhCall;
 
 namespace Fahrenheit.Modules.TrueRNG;
 
@@ -23,6 +22,9 @@ namespace Fahrenheit.Modules.TrueRNG;
  * > [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
  * > public delegate uint brnd(int param_1);
  */
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+public delegate uint brnd(int param_1);
 
 [FhLoad(FhGameType.FFX)]
 public class TrueRNGModule : FhModule {
