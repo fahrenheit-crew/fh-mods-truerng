@@ -56,7 +56,7 @@ public class TrueRNGModule : FhModule {
         return _brnd_handle.orig_fptr.Invoke(0);
     }
 
-    public override bool init(FileStream global_state_file) {
+    public override bool init(FhModContext mod_context, FileStream global_state_file) {
         /* [fkelava 9/9/24 22:26]
          * Hook the target function of a method handle as follows:
          * > bool hook_successful = _handle.hook();
