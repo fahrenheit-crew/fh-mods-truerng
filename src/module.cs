@@ -42,7 +42,7 @@ public class TrueRNGModule : FhModule {
     private readonly FhMethodHandle<brnd> _brnd_handle;
 
     public TrueRNGModule() {
-        _brnd_handle = new FhMethodHandle<brnd>(this, "FFX.exe", h_brnd, 0x398900);
+        _brnd_handle = new FhMethodHandle<brnd>(this, "FFX.exe", 0x398900, h_brnd);
     }
 
     public uint h_brnd(int param_1) {
