@@ -28,11 +28,11 @@
 
     <!-- PROJECT REFERENCES -->
     <ItemGroup>
-        <ProjectReference Include="..\..\base\core\Fahrenheit.Core.csproj">
+        <ProjectReference Include="..\..\core\framework\Fahrenheit.Core.csproj">
             <Private>false</Private>
             <ExcludeAssets>runtime;native</ExcludeAssets>
         </ProjectReference>
-        <ProjectReference Include="..\..\base\ffx\Fahrenheit.Core.FFX.csproj">
+        <ProjectReference Include="..\..\core\ffx\Fahrenheit.Core.FFX.csproj">
             <Private>false</Private>
             <ExcludeAssets>runtime;native</ExcludeAssets>
         </ProjectReference>
