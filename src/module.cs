@@ -28,7 +28,7 @@ namespace Fahrenheit.Modules.TrueRNG;
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 public delegate uint brnd(int param_1);
 
-[FhLoad(FhGameType.FFX)]
+[FhLoad(FhGameId.FFX)]
 public class TrueRNGModule : FhModule {
     /* [fkelava 9/9/24 22:26]
      * Every function you intend to hook or invoke must have an associated _method handle_ declared.
