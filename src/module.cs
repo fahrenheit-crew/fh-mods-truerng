@@ -3,8 +3,6 @@
 using System.IO;
 using System.Runtime.InteropServices;
 
-using Fahrenheit.Core;
-
 namespace Fahrenheit.Modules.TrueRNG;
 
 /* [fkelava 9/9/24 22:26]
