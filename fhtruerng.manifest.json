@@ -4,7 +4,7 @@
     "Desc":"Prevents the game's RNG system from being tracked.",
     "Authors": "The Fahrenheit contributors",
     "Version":"1.0.0-alpha",
-    "Link":"https://github.com/peppy-enterprises/fh-mods-truerng",
+    "Link":"https://github.com/fahrenheit-crew/fh-mods-truerng",
     "Dependencies":[],
     "LoadAfter":[],
     "Flags":"NONE"
