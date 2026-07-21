@@ -1,0 +1,11 @@
+﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha11">
+    <PropertyGroup>
+        <AssemblyName>fhtruerng</AssemblyName>
+        <AssemblyTitle>True RNG</AssemblyTitle>
+        <Product>True RNG</Product>
+        <Authors>The Fahrenheit contributors</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fahrenheit-crew/fh-mods-truerng</RepositoryUrl>
+        <FhManifestFlags>NONE</FhManifestFlags>
+    </PropertyGroup>
+</Project>

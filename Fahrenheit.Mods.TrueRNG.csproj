@@ -1,7 +1,0 @@
-﻿<Project Sdk="Fahrenheit.Sdk/1.0.0-alpha08">
-    <PropertyGroup>
-        <AssemblyName>fhtruerng</AssemblyName>
-        <AssemblyTitle>True RNG toolset for Final Fantasy X/X-2</AssemblyTitle>
-        <Product>True RNG toolset for Final Fantasy X/X-2</Product>
-    </PropertyGroup>
-</Project>
