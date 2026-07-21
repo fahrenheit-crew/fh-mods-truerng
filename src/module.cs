@@ -2,7 +2,7 @@
 
 using System.IO;
 
-namespace Fahrenheit.Modules.TrueRNG;
+namespace Fahrenheit.Mods.TrueRNG;
 
 [FhLoad(FhGameId.FFX)]
 public class TrueRNGModule : FhModule {
