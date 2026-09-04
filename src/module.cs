@@ -9,7 +9,7 @@ public class TrueRNGModule : FhModule {
     public override bool init(FhModContext mod_context, FileStream global_state_file) {
         // Hook the target function through FhCall:
         //   {|FFX|FFX2}.FhCall.function_name.hook(this, hook_method);
-        return FFX.FhCall.brnd.hook(this, h_brnd);
+        return FhCall.brnd.hook(this, h_brnd);
     }
 
     public int h_brnd(int slot) {
@@ -21,6 +21,6 @@ public class TrueRNGModule : FhModule {
 
         // Fall through to the original function (including other hooks) using `.chain_from(hook_method)`:
         //   {|FFX|FFX2}.FhCall.function_name.chain_from(hook_method).fnptr!(arguments);
-        return FFX.FhCall.brnd.chain_from(h_brnd).fnptr!(0);
+        return FhCall.brnd.chain_from(h_brnd).fnptr!(0);
     }
 }
